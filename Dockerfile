@@ -33,11 +33,11 @@ RUN apt update && \
         zlib1g-dev \
         libcurl3-dev && \
     # pip
-    pip install --no-cache-dir --upgrade pip \
+    pip2 install --no-cache-dir --upgrade pip \
      # Fix No module named pkg_resources
      setuptools && \
     # Grpc
-    pip install --no-cache-dir mock grpcio \
+    pip2 install --no-cache-dir mock grpcio \
     # TensorFlow Serving Python API PIP package
      tensorflow-serving-api && \
     #
