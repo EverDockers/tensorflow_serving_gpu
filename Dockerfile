@@ -23,22 +23,13 @@ RUN apt update && \
         libpng12-dev \
         libzmq3-dev \
         pkg-config \
-        #
-        # Python 2.7
-        # Tensorflow serving still relies on python2, exactly it's that GRPC still dosen't supprt python3
-        #
-        python2.7 python-dev python-numpy python-pip \
         software-properties-common \
         swig \
         zlib1g-dev \
         libcurl3-dev && \
-    # pip
-    # setuptools: Fix No module named pkg_resources
-    pip2 install --no-cache-dir --upgrade setuptools pip && \
     # Grpc
-    pip2 install --no-cache-dir mock grpcio \
-    # TensorFlow Serving Python API PIP package
-     tensorflow-serving-api && \
+    pip3 install --no-cache-dir mock grpcio && \
+    # pip3 install --no-cache-dir tensorflow-serving-api && \
     #
     # Clean up
     #
@@ -58,6 +49,12 @@ RUN apt update && \
     #
     apt-get clean && \
     apt autoremove && \
-    rm -rf /var/lib/apt/lists/* && \
+    rm -rf /var/lib/apt/lists/*
+
+#
+# tensorflow-serving-api
+# just copy the built files of python2 to python3.5 packages since there hasn't been official package supporting python3
+#
+COPY tensorflow_serving_api-1.3.0 /usr/local/lib/python3.5/dist-packages/
 
 CMD ["/bin/bash"]
