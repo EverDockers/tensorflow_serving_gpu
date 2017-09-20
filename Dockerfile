@@ -33,9 +33,8 @@ RUN apt update && \
         zlib1g-dev \
         libcurl3-dev && \
     # pip
-    pip2 install --no-cache-dir --upgrade pip \
-     # Fix No module named pkg_resources
-     setuptools && \
+    # setuptools: Fix No module named pkg_resources
+    pip2 install --no-cache-dir --upgrade setuptools pip && \
     # Grpc
     pip2 install --no-cache-dir mock grpcio \
     # TensorFlow Serving Python API PIP package
@@ -60,8 +59,5 @@ RUN apt update && \
     apt-get clean && \
     apt autoremove && \
     rm -rf /var/lib/apt/lists/* && \
-
-
-WORKDIR /
 
 CMD ["/bin/bash"]
