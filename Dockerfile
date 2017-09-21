@@ -1,4 +1,4 @@
-FROM baikangwang/tensorflow_gpu:tfonly2
+FROM baikangwang/tensorflow_gpu:tfonly_py2
 
 MAINTAINER Baker Wang <baikangwang@hotmail.com>
 
@@ -23,11 +23,7 @@ RUN apt update && \
         libpng12-dev \
         libzmq3-dev \
         pkg-config \
-        #
-        # Python 2.7
-        # Tensorflow serving still relies on python2, exactly it's that GRPC still dosen't supprt python3
-        #
-        python2.7 python-dev python-numpy python-pip \
+        python-numpy \
         software-properties-common \
         swig \
         zlib1g-dev \
