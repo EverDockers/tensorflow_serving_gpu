@@ -1,4 +1,4 @@
-FROM baikangwang/tensorflow_gpu:tfonly
+FROM baikangwang/tensorflow_gpu:tfonly2
 
 MAINTAINER Baker Wang <baikangwang@hotmail.com>
 
@@ -32,11 +32,8 @@ RUN apt update && \
         swig \
         zlib1g-dev \
         libcurl3-dev && \
-    # pip
-    # setuptools: Fix No module named pkg_resources
-    pip2 install --no-cache-dir --upgrade setuptools pip && \
     # Grpc
-    pip2 install --no-cache-dir mock grpcio \
+    pip install --no-cache-dir mock grpcio \
     # TensorFlow Serving Python API PIP package
      tensorflow-serving-api && \
     #
