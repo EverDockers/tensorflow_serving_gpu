@@ -33,12 +33,6 @@ RUN apt update && \
     # TensorFlow Serving Python API PIP package
      tensorflow-serving-api && \
     #
-    # Clean up
-    #
-    apt-get clean && \
-    apt autoremove && \
-    rm -rf /var/lib/apt/lists/* && \
-    #
     # Install Tensorflow serving 1.3.0
     #
     # Install using apt-get
@@ -51,6 +45,6 @@ RUN apt update && \
     #
     apt-get clean && \
     apt autoremove && \
-    rm -rf /var/lib/apt/lists/* && \
+    rm -rf /var/lib/apt/lists/*
 
 CMD ["/bin/bash"]
