@@ -38,13 +38,13 @@ ls -lsa /MNIST
 > Server
 
 ```bash
-nvidia-docker run -it -v /MNIST:/projects -p 9000:9000 --name ts_server baikangwang/tensorflow_serving_gpu:3.5 /bin/bash
+nvidia-docker run -it -v /MNIST:/projects -p 9000:9000 --name ts_server baikangwang/tensorflow_serving_gpu[:<tag>] /bin/bash
 ```
 
 > Client
 
 ```bash
-nvidia-docker run -it -v /MNIST:/projects --name --net=host ts_client baikangwang/tensorflow_serving_gpu:3.5 /bin/bash
+nvidia-docker run -it -v /MNIST:/projects --name --net=host ts_client baikangwang/tensorflow_serving_gpu[:<tag>] /bin/bash
 ```
 
 ### Run
