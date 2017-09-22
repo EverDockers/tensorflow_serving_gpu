@@ -1,7 +1,11 @@
 # Tensorflow serving (gpu)
 
 * repository
-    * [`baikangwang/tensorflow_serving_gpu`](https://hub.docker.com/r/baikangwang/tensorflow_serving_gpu/)
+    * [`baikangwang/tensorflow_serving_gpu`](https://hub.docker.com/r/baikangwang/tensorflow_serving_gpu/)  
+      ![Docker Automated buil](https://img.shields.io/docker/automated/baikangwang/tensorflow_serving_gpu.svg)
+      ![Docker Stars](https://img.shields.io/docker/stars/baikangwang/tensorflow_serving_gpu.svg)
+      ![Docker Pulls](https://img.shields.io/docker/pulls/baikangwang/tensorflow_serving_gpu.svg)
+      ![Docker Build Statu](https://img.shields.io/docker/build/baikangwang/tensorflow_serving_gpu.svg)
 * tags
     * [`3.5`,`latest`](#35latest)
     * [`2.7`](#27)
